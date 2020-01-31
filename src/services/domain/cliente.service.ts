@@ -13,9 +13,9 @@ export class ClienteService {
         public storage: StorageService
     ) {}
 
-    findByEmail(email: String) : Observable<ClienteDTO> {
+    findByEmail(email: String) {
         return this.http
-            .get<ClienteDTO>(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`)
+            .get(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`)
     }
 
     getImageFromBucket(id: String) : Observable<any> {
