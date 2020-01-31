@@ -15,6 +15,8 @@ export class CartPage {
 
   items: CartItem[];
 
+  bucketBaseUrl: string = API_CONFIG.bucketBaseUrl;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -36,7 +38,7 @@ export class CartPage {
         .subscribe(resposta => {
           item.produto.imageUrl = `${API_CONFIG.bucketBaseUrl}/prod${item.produto.id}-small.jpg`;
         },
-        error => {});
+        error => {});      
     }
   }
 
